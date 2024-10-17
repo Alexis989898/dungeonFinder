@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+#root {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #090b16;
+  color: white;
+}
+
+.header-menu-item {
+  text-wrap: nowrap;
+  text-align: center;
+}
+
+.header-menu-item:hover {
+  cursor: pointer;
+}
+
+.rpg-cover-wrapper {
+    
+}
+
+.rpg-cover-img {
+    position: relative;
+    object-position: 5px 10%;
+}
