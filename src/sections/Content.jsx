@@ -6,15 +6,8 @@ import System from "../items/System.jsx";
 function Content() {
   return (
     <>
-      <div className="rpg-cover-wrapper w-full">
-        <img
-          className="rpg-cover-img w-full h-96 object-cover"
-          src={test}
-          alt=""
-        />
-      </div>
       <div id="lists-wrapper" className=" flex flex-col gap-16">
-        <div id="rpg-system-list-wrapper" className="">
+        <div id="rpg-system-list-wrapper">
           <div
             id="list-name-div"
             className="w-full flex bg-white px-2 py-1 rounded-xl justify-center bg-opacity-5"

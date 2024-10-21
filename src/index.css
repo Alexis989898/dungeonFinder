@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Paprika&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+* {
+  font-family: Inter;
+}
 
 body,
 #root {
@@ -22,10 +29,10 @@ body,
 }
 
 .rpg-cover-wrapper {
-    
+    border: 1px solid rgb(255, 255, 255);
+    height: 600px;
+    mask-image: radial-gradient(circle, rgb(0, 0, 0) 0%, transparent 50%);
 }
 
 .rpg-cover-img {
-    position: relative;
-    object-position: 5px 10%;
 }

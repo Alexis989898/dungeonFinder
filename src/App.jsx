@@ -8,7 +8,8 @@ function App() {
   return (
     <>
       <div className="container mx-auto px-4">
-        <div className="mx-64">
+        <div className="mx-[20%]">
+          <div className="rpg-cover-wrapper absolute bg-test"></div>
           <Header />
           <Content />
           <Footer />
