@@ -42,19 +42,22 @@ const Header = () => {
           hasScrolled && "py-2 bg-black-100 backdrop-blur-[8px]"
         )}
       >
+        <div className="flex items-center w-full h-24 justify-center  max-lg:gap-64 max-md:gap-32 max-sm:gap-12 ">
+          <img
+            className="h-40 mr-auto cursor-pointer"
+            src={icon}
+            alt="dungeonFinder icon"
+          />
 
-        <div className="flex items-center w-full h-24 justify-center  lg:gap-64 md:gap-32 sm:gap-12 ">
-          <img className="h-40 mr-auto" src={icon} alt="dungeonFinder icon" />
-
-          <div className="flex space-x-2">
-            <div className="header-menu-item w-16">Home</div>
-            <div className="header-menu-item w-28">Find Games</div>
-            <div className="header-menu-item w-28">Browse Games</div>
-            <div className="header-menu-item w-16">Forum</div>
-            <div className="text-yellow-400">
-              <CircleUserRound />
-            </div>
-          </div>
+        <div className="">
+           <ul className="space-x-12 flex uppercase">
+            <li>Find Games</li>
+            <li>Browse Games</li>
+            <li>Forum</li>
+            <CircleUserRound className="text-yellow-400 cursor-pointer" />
+           </ul>
+        </div>
+          
         </div>
       </header>
     </>
