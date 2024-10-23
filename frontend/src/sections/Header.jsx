@@ -3,9 +3,10 @@ import { Link as LinkScroll } from "react-scroll";
 import { CircleUserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { navigation } from "../constants";
 
 const Header = () => {
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, sethasScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const Header = () => {
       spy
       smooth
       activeClass="nav-active"
-      className="base-bold text-p4 uppercase transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
+      className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px] font-semibold leading-[40px]"
     >
       {title}
     </LinkScroll>
@@ -36,28 +37,54 @@ const Header = () => {
 
   return (
     <>
-      <header
-        className={clsx(
-          "top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4",
-          hasScrolled && "py-2 bg-black-100 backdrop-blur-[8px]"
-        )}
-      >
-        <div className="flex items-center w-full h-24 justify-center  max-lg:gap-64 max-md:gap-32 max-sm:gap-12 ">
-          <img
-            className="h-40 mr-auto cursor-pointer"
-            src={icon}
-            alt="dungeonFinder icon"
-          />
+      <header className="fixed top-0 left-0 z-50 w-full py-10">
+        <div className="container flex h-14 items-center max-lg:px-5">
+          <div className="lg:hidden flex-1 cursor-pointer z-2">
+            <img src={icon} width={155} height={55} alt="logo" />
+          </div>
 
-        <div className="">
-           <ul className="space-x-12 flex uppercase">
-            <li>Find Games</li>
-            <li>Browse Games</li>
-            <li>Forum</li>
-            <CircleUserRound className="text-yellow-400 cursor-pointer" />
-           </ul>
-        </div>
-          
+          <div
+            className={clsx(
+              "w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:opacity-0",
+              isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
+            )}
+          >
+            <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden">
+              <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
+                <ul className="flex max-lg:block max-lg:px-12">
+                  <li className="relative flex flex-1 items-center justify-center">
+                    <LinkScroll
+                      to="hero"
+                      offset={-100}
+                      spy
+                      smooth
+                      className={clsx(
+                        "max-lg:hidden transition-transform duration-500 cursor-pointer"
+                      )}
+                    >
+                      <img src={icon} width={155} height={55} alt="logo" />
+                    </LinkScroll>
+                  </li>
+                  <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start">
+                    <NavLink title="Find Games" />
+                    <NavLink title="Browse Games" />
+                    <NavLink title="Forum" />
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <button
+            className="lg:hidden z-2 size-10 border-2 border-yellow-300/70 rounded-full flex justify-center items-center"
+            onClick={() => setIsOpen((prevState) => !prevState)}
+          >
+            <img
+              src={`/images/${isOpen ? "x" : "menu"}.svg`}
+              alt="magic"
+              className="size-1/2 object-contain"
+            />
+          </button>
         </div>
       </header>
     </>

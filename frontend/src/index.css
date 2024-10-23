@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Paprika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +7,15 @@
 
 
 * {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
 }
 
 body,
 #root {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: #090b16;
   color: white;
 }
 
-.header-menu-item {
-  text-wrap: nowrap;
-  text-align: center;
-}
-
-.header-menu-item:hover {
-  cursor: pointer;
-}
-
-.rpg-cover-wrapper {
-    border: 1px solid rgb(255, 255, 255);
-    height: 600px;
-    mask-image: radial-gradient(circle, rgb(0, 0, 0) 0%, transparent 50%);
-}
-
-.rpg-cover-img {
+.container {
+  @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
 }
