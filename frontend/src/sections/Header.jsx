@@ -1,13 +1,13 @@
-import icon from "../assets/icon_nobg.png";
+import icon from "../assets/icon_nobg.png"; // Logo dungeonFinder
 import { Link as LinkScroll } from "react-scroll";
-import { CircleUserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { CircleUserRound } from "lucide-react";
 import { navigation } from "../constants";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasScrolled, sethasScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,20 +39,20 @@ const Header = () => {
     <>
       <header className="fixed top-0 left-0 z-50 w-full py-10">
         <div className="container flex h-14 items-center max-lg:px-5">
-          <div className="lg:hidden flex-1 cursor-pointer z-2">
+          <div className="logo-wrapper-mobile lg:hidden cursor-pointer z-2">
             <img src={icon} width={155} height={55} alt="logo" />
           </div>
 
           <div
             className={clsx(
-              "w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:opacity-0",
+              "header-menu w-full max-lg:fixed max-lg:top-0 max-lg:bottom-0 max-lg:items-center max-lg:flex max-lg:left-0 max-lg:w-full max-lg:opacity-0",
               isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
             )}
           >
-            <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:min-h-screen max-lg:p-6 max-lg:overflow-hidden">
+            <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:p-6 max-lg:overflow-hidden bg-slate-700">
               <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
                 <ul className="flex max-lg:block max-lg:px-12">
-                  <li className="relative flex flex-1 items-center justify-center">
+                  <li className="logo-wrapper relative flex flex-1 items-center justify-start">
                     <LinkScroll
                       to="hero"
                       offset={-100}
@@ -76,7 +76,7 @@ const Header = () => {
           </div>
 
           <button
-            className="lg:hidden z-2 size-10 border-2 border-yellow-300/70 rounded-full flex justify-center items-center"
+            className="hamburger-btn lg:hidden z-10 size-10 border-2 ml-auto border-yellow-300/70 rounded-full flex justify-center items-center"
             onClick={() => setIsOpen((prevState) => !prevState)}
           >
             <img

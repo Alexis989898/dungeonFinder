@@ -12,8 +12,14 @@
 
 body,
 #root {
+  height: 100vh;
   background-color: #090b16;
   color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
