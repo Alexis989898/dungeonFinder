@@ -49,7 +49,7 @@ const Header = () => {
               isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
             )}
           >
-            <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:p-6 max-lg:overflow-hidden bg-slate-700">
+            <div className="max-lg:relative max-lg:flex max-lg:flex-col max-lg:p-6 max-lg:overflow-hidden">
               <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
                 <ul className="flex max-lg:block max-lg:px-12">
                   <li className="logo-wrapper relative flex flex-1 items-center justify-start">
@@ -69,6 +69,7 @@ const Header = () => {
                     <NavLink title="Find Games" />
                     <NavLink title="Browse Games" />
                     <NavLink title="Forum" />
+                    <CircleUserRound className="text-yellow-400 cursor-pointer" size={40}></CircleUserRound>
                   </li>
                 </ul>
               </nav>
