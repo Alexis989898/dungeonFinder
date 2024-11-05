@@ -1,5 +1,6 @@
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
+import HeroTwo from "./sections/HeroTwo";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       
       
           <Header />
-          <Hero />
+          <HeroTwo />
       
        
     </>
