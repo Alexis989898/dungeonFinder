@@ -69,7 +69,7 @@ const Header = () => {
                     <NavLink title="Find Games" />
                     <NavLink title="Browse Games" />
                     <NavLink title="Forum" />
-                    <CircleUserRound className="text-yellow-400 cursor-pointer" size={40}></CircleUserRound>
+                    <CircleUserRound className="text-yellow-400 cursor-pointer max-lg:hidden" size={40}></CircleUserRound>
                   </li>
                 </ul>
               </nav>
