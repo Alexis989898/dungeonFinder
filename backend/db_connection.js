@@ -1,22 +1,21 @@
+import pg  from 'pg';
+const { Client } = pg;
 
-import pg from 'pg'
-const { Pool } = pg
-const pool = new Pool({
-  user: "postgres",
-  password: "9898",
-  host: "192.168.100.206",
-  port: 5432,
-  database: "Test0",
-})
-await pool.connect()
-module.exports = pool;
- 
-// const res = await client.query('SELECT $1::text as message', ['Hello world!'])
-//console.log(res.rows[0].message) // Hello world!
-//await client.end()
+const client = new Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'postgres',
+    password: 'fatec',
+    port: 5432,
+});
+await client.connect()
 
-// config Config() {
 
-	// connectionString?: postgres:
-// }
+const result = await client.query('SELECT NOW(), foo from tabela_teste')
+console.log(result)
 
+await client.end()
+
+// TODO: interface para o front
+// TODO: interface para o front
+// TODO: interface para o front
