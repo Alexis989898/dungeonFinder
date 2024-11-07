@@ -1,21 +1,25 @@
+import Game from "./Game.jsx"
+
 function GameList(props) {
+  const Icon = props.icon;
+
   return (
-    <div className="max-w-sm rounded relative w-64">
-      <div className="relative w-auto h-auto">
-        <img src={props.image} alt={props.name} className="" />
+    <div id="rpg-system-list-wrapper">
+      <div
+        id="list-name-div"
+        className="w-full flex bg-white px-2 py-1 rounded-xl justify-center bg-opacity-5"
+      >
+        <div id="list-icon" className="text-yellow-400 pt-1 pr-1">
+          <Icon size={18} />
+        </div>
+        <div id="list-name">{props.name}</div>
+        <div id="view-all-btn" className="ml-auto cursor-pointer">
+          View All
+        </div>
       </div>
-      <div className="py-4 flex flex-col gap-0 bg-gray-900 px-4">
-        <div className="flex justify-between items-center gap-1">
-          <h2 className="font-bold text-white text-xl w-full">
-            Call of Cthulu
-          </h2>
-          <div className="bg-[#161921] rounded-md">
-            <p className="text-white text-sm font-bold capitalize"></p>
-          </div>
-        </div>
-        <div className="flex flex-row  items-center">
-          <p className="text-base text-white font-bold">12 Games Available</p>
-        </div>
+
+      <div id="system-list" className="flex mt-4 gap-4">
+        <Game name="Porra" image=""/>
       </div>
     </div>
   );
