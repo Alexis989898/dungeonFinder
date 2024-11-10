@@ -34,7 +34,7 @@ body,
 }
 
 .rpg-cover-img {
-  object-position: 5px 10%;
+  object-position: 50% 50%;
   bottom: -1;
   object-fit: cover;
   width: 100%;
@@ -52,4 +52,12 @@ body,
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

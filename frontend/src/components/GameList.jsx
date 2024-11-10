@@ -1,7 +1,21 @@
-import Game from "./Game.jsx"
+import Game from "./Game.jsx";
+import { useRef } from "react";
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 function GameList(props) {
   const Icon = props.icon;
+  const carouselRef = useRef(null);
+
+  // Scroll to the left or right by a fixed amount
+  const scroll = (direction) => {
+    if (carouselRef.current) {
+      const scrollAmount = 300; // Adjust to control how far to scroll
+      carouselRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <div id="rpg-system-list-wrapper">
@@ -18,8 +32,40 @@ function GameList(props) {
         </div>
       </div>
 
-      <div id="system-list" className="flex mt-4 gap-4">
-        <Game name="Porra" image=""/>
+      <div className="relative mt-4">
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full"
+        >
+           <ChevronLeft/>
+        </button>
+
+        {/* Carousel container */}
+        <div
+          id="system-list"
+          ref={carouselRef}
+          className="flex gap-4 overflow-x-scroll scroll-smooth hide-scrollbar"
+        >
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          <Game name="Teste" image="" />
+          {/* Add as many <Game> components as needed */}
+        </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full"
+        >
+          <ChevronRight/>
+        </button>
       </div>
     </div>
   );
