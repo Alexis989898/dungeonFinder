@@ -40,7 +40,7 @@ const Header = () => {
       <header
         className={clsx(
           "fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4",
-          hasScrolled && "py-2 bg-slate-950 backdrop-blur-[8px]"
+          hasScrolled && "py-2 bg-slate-950"
         )}
       >
         <div className="container flex h-14 items-center max-lg:px-5">
@@ -50,7 +50,7 @@ const Header = () => {
 
           <div
             className={clsx(
-              "header-menu w-full max-lg:fixed max-lg:top-0 max-lg:bottom-0 max-lg:items-center max-lg:flex max-lg:left-0 max-lg:w-full max-lg:opacity-0",
+              "header-menu w-full max-lg:fixed max-lg:top-0 max-lg:bottom-0 max-lg:items-center max-lg:flex max-lg:left-0 max-lg:w-full max-lg:opacity-0 max-lg:bg-gradient-to-t max-lg:from-slate-900 max-lg:to-slate-950 ",
               isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none"
             )}
           >
@@ -70,7 +70,7 @@ const Header = () => {
                       <img src={icon} width={155} height={55} alt="logo" />
                     </LinkScroll>
                   </li>
-                  <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start max-lg:fixed max-lg:py-[calc(50%+25px)]">
+                  <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start max-lg:fixed max-lg:-my-48">
                     <NavLink title="Find Games" />
                     <NavLink title="Browse Games" />
                     <NavLink title="Forum" />

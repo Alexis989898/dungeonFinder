@@ -2,7 +2,7 @@ import { Element } from "react-scroll";
 import GameList from "../components/GameList.jsx";
 import cover1 from "../assets/call-of-cthulhu.jpg.webp";
 import { Crown, AlarmClockCheck } from "lucide-react";
-
+import mainImageTest from "../assets/mainImageTest.jpg";
 const Hero = () => {
 
   return (
@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="radial-gradient-cover nested"></div>
             <img
               className="rpg-cover-img nested w-full block object-bottom"
-              src={cover1}
+              src={mainImageTest}
               alt=""
             />
           </div>
