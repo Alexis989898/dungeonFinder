@@ -21,13 +21,13 @@ function GameList(props) {
     <div id="rpg-system-list-wrapper">
       <div
         id="list-name-div"
-        className="w-full flex bg-white px-2 py-1 rounded-xl justify-center bg-opacity-5"
+        className="w-full flex bg-white px-2 py-1 rounded-xl justify-center bg-opacity-5 gap-3"
       >
         <div id="list-icon" className="text-yellow-400 pt-1 pr-1">
           <Icon size={18} />
         </div>
-        <div id="list-name">{props.name}</div>
-        <div id="view-all-btn" className="ml-auto cursor-pointer">
+        <div id="list-name" className="font-bold">{props.name}</div>
+        <div id="view-all-btn" className="ml-auto cursor-pointer hover:text-yellow-300 hover:transition-colors hover:duration-500 font-bold">
           View All
         </div>
       </div>
