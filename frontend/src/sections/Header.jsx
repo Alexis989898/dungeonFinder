@@ -29,15 +29,15 @@ const Header = () => {
       spy
       smooth
       activeClass="nav-active"
-      className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px] font-semibold leading-[40px]"
+      className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]"
     >
-      {title}
+    {title}
     </LinkScroll>
   );
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-50 w-full py-10">
+      <header className={clsx("fixed top-0 left-0 z-50 w-full py-10", hasScrolled && "py-2 bg-slate-950 backdrop-blur-[8px]")}>
         <div className="container flex h-14 items-center max-lg:px-5">
           <div className="logo-wrapper-mobile lg:hidden cursor-pointer z-2">
             <img src={icon} width={155} height={55} alt="logo" />
@@ -65,7 +65,7 @@ const Header = () => {
                       <img src={icon} width={155} height={55} alt="logo" />
                     </LinkScroll>
                   </li>
-                  <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start">
+                  <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start max-lg:fixed max-lg:py-[calc(50%+25px)]">
                     <NavLink title="Find Games" />
                     <NavLink title="Browse Games" />
                     <NavLink title="Forum" />
