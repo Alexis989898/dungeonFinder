@@ -31,13 +31,18 @@ const Header = () => {
       activeClass="nav-active"
       className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]"
     >
-    {title}
+      {title}
     </LinkScroll>
   );
 
   return (
     <>
-      <header className={clsx("fixed top-0 left-0 z-50 w-full py-10", hasScrolled && "py-2 bg-slate-950 backdrop-blur-[8px]")}>
+      <header
+        className={clsx(
+          "fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500",
+          hasScrolled && "py-2 bg-slate-950 backdrop-blur-[8px]"
+        )}
+      >
         <div className="container flex h-14 items-center max-lg:px-5">
           <div className="logo-wrapper-mobile lg:hidden cursor-pointer z-2">
             <img src={icon} width={155} height={55} alt="logo" />
@@ -69,7 +74,10 @@ const Header = () => {
                     <NavLink title="Find Games" />
                     <NavLink title="Browse Games" />
                     <NavLink title="Forum" />
-                    <CircleUserRound className="text-yellow-400 cursor-pointer max-lg:hidden" size={40}></CircleUserRound>
+                    <CircleUserRound
+                      className="text-yellow-400 cursor-pointer max-lg:hidden"
+                      size={40}
+                    ></CircleUserRound>
                   </li>
                 </ul>
               </nav>
