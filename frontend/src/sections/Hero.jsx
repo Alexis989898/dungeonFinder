@@ -1,6 +1,5 @@
 import { Element } from "react-scroll";
 import GameList from "../components/GameList.jsx";
-import cover1 from "../assets/call-of-cthulhu.jpg.webp";
 import { Crown, AlarmClockCheck } from "lucide-react";
 import mainImageTest from "../assets/mainImageTest.jpg";
 const Hero = () => {
