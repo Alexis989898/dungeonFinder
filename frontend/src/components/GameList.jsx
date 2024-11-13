@@ -6,10 +6,9 @@ function GameList(props) {
   const Icon = props.icon;
   const carouselRef = useRef(null);
 
-  // Scroll to the left or right by a fixed amount
   const scroll = (direction) => {
     if (carouselRef.current) {
-      const scrollAmount = 300; // Adjust to control how far to scroll
+      const scrollAmount = 300;
       carouselRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -45,18 +44,11 @@ function GameList(props) {
         <div
           id="system-list"
           ref={carouselRef}
-          className="flex gap-4 overflow-x-scroll scroll-smooth hide-scrollbar"
+          className="flex gap-4 overflow-x-scroll overflow-y-hidden scroll-smooth hide-scrollbar h-80"
         >
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          <Game name="Teste" image="" />
-          {/* Add as many <Game> components as needed */}
+          {props.games.map((game, index) => (
+            <Game key={index} name={game.name} image={game.image} />
+          ))}
         </div>
 
         {/* Right arrow */}

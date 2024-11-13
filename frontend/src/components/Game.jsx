@@ -8,7 +8,10 @@ function Game(props) {
           alt=""
         />
       </div>
-      <div id="system-name">{props.name}</div>
+      <div id="system-info-wrapper" className="bg-white bg-opacity-5 rounded-b-xl">
+        <div id="system-name" className="p-2 pb-0">{props.name}</div>
+        <div id="system-available" className="p-2 pt-0">{props.available} Games available</div>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,19 @@ import { Crown, AlarmClockCheck } from "lucide-react";
 import mainImageTest from "../assets/mainImageTest.jpg";
 const Hero = () => {
 
+  const games = [
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover1.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover2.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover3.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover4.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover5.png" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover6.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover7.jpg" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover8.png" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover9.png" },
+    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover10.png" },
+  ];  
+
   return (
     <section className="relative pt-60 pb-40 max-lg:pt-52 max-lg:pb-36 max-md:pt-36 max-md:pb-32">
       <Element name="hero">
@@ -19,8 +32,8 @@ const Hero = () => {
           </div>
           
           <div id="lists-wrapper" className=" flex flex-col gap-16 relative -top-[200px] z-10">
-            <GameList icon={Crown} name="Most Popular" />
-            <GameList icon={AlarmClockCheck} name="Most Recent" />
+            <GameList icon={Crown} name="Most Popular" games={games} />
+            <GameList icon={AlarmClockCheck} name="Most Recent" games={games}/>
           </div>
         </div>
       </Element>
