@@ -17,7 +17,7 @@ function GameList(props) {
   };
 
   return (
-    <div id="rpg-system-list-wrapper">
+    <div id="rpg-system-list-wrapper" className="">
       <div
         id="list-name-div"
         className="w-full flex bg-white px-2 py-1 rounded-xl justify-center bg-opacity-5 gap-3"
@@ -31,7 +31,7 @@ function GameList(props) {
         </div>
       </div>
 
-      <div className="relative mt-4">
+      <div className="relative flex overflow-visible">
         {/* Left arrow */}
         <button
           onClick={() => scroll("left")}
@@ -44,7 +44,7 @@ function GameList(props) {
         <div
           id="system-list"
           ref={carouselRef}
-          className="flex gap-4 overflow-x-scroll overflow-y-hidden scroll-smooth hide-scrollbar h-80"
+          className="flex gap-4 overflow-x-scroll overflow-y-visible scroll-smooth hide-scrollbar h-96 px-5 items-center"
         >
           {props.games.map((game, index) => (
             <Game key={index} name={game.name} image={game.image} />
