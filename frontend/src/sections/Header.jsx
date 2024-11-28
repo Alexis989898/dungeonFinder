@@ -1,13 +1,21 @@
 import icon from "../assets/icon_nobg.png"; // Logo dungeonFinder
-import { Link as LinkScroll } from "react-scroll";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router";
 import clsx from "clsx";
 import { CircleUserRound } from "lucide-react";
-import { navigation } from "../constants";
+import Search from "./Search.jsx";
 
 const Header = () => {
+  //Header responsive check
   const [isOpen, setIsOpen] = useState(false);
+  //Header scroll animation
   const [hasScrolled, setHasScrolled] = useState(false);
+  //Search modal
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal((prev) => !prev);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,18 +29,14 @@ const Header = () => {
     };
   }, []);
 
-  const NavLink = ({ title }) => (
-    <LinkScroll
-      to={title}
+  const CustomLink = ({ to, text }) => (
+    <NavLink
+      to={to}
       onClick={() => setIsOpen(false)}
-      offset={-100}
-      spy
-      smooth
-      activeClass="nav-active"
       className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]"
     >
-      {title}
-    </LinkScroll>
+      {text}
+    </NavLink>
   );
 
   return (
@@ -44,9 +48,12 @@ const Header = () => {
         )}
       >
         <div className="container flex h-14 items-center max-lg:px-5">
-          <div className="logo-wrapper-mobile lg:hidden cursor-pointer z-2">
-            <img src={icon} width={155} height={55} alt="logo" />
-          </div>
+          {/*Logo mobile*/}
+          <NavLink to="/" offset={-100}>
+            <div className="logo-wrapper-mobile lg:hidden cursor-pointer z-2">
+              <img src={icon} width={155} height={55} alt="logo" />
+            </div>
+          </NavLink>
 
           <div
             className={clsx(
@@ -58,22 +65,24 @@ const Header = () => {
               <nav className="max-lg:relative max-lg:z-2 max-lg:my-auto">
                 <ul className="flex max-lg:block max-lg:px-12">
                   <li className="logo-wrapper relative flex flex-1 items-center justify-start">
-                    <LinkScroll
-                      to="hero"
+                    {/*Logo desktop*/}
+                    <NavLink
+                      to="/"
                       offset={-100}
-                      spy
-                      smooth
                       className={clsx(
                         "max-lg:hidden transition-transform duration-500 cursor-pointer"
                       )}
                     >
                       <img src={icon} width={155} height={55} alt="logo" />
-                    </LinkScroll>
+                    </NavLink>
                   </li>
                   <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start max-lg:fixed max-lg:-my-48">
-                    <NavLink title="Find Games" />
-                    <NavLink title="Browse Games" />
-                    <NavLink title="Forum" />
+                    <div onClick={toggleModal} className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]">
+                      Find Games
+                    </div>
+                    <CustomLink to="/Browse" text="Browse Games" />
+                    <CustomLink to="/Forum" text="Forum" />
+
                     <CircleUserRound
                       className="text-yellow-400 cursor-pointer max-lg:hidden"
                       size={40}
@@ -96,6 +105,8 @@ const Header = () => {
           </button>
         </div>
       </header>
+
+      <Search modal={modal} toggleModal={toggleModal} />
     </>
   );
 };
