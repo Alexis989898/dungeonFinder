@@ -11,6 +11,10 @@ module.exports = {
         'test': "url('./src/assets/MonsterManualTraditionalCover.webp')",
         'footer-texture': "url('/img/footer-texture.png')",
       }
-    }
+    },
+    animation: {
+      fadeInDown: 'fadeInDown 0.5s ease-out forwards',
+      fadeOutUp: 'fadeOutUp 0.5s ease-out forwards',
+    },
   },
 }

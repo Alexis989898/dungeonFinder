@@ -2,19 +2,38 @@ import icon from "../assets/icon_nobg.png"; // Logo dungeonFinder
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import clsx from "clsx";
-import { CircleUserRound } from "lucide-react";
-import Search from "../components/Search.jsx";
+import { CircleUserRound, Search } from "lucide-react";
+import SearchModal from "../components/SearchModal.jsx";
 
 const Header = () => {
   //Header responsive check
   const [isOpen, setIsOpen] = useState(false);
   //Header scroll animation
   const [hasScrolled, setHasScrolled] = useState(false);
-  //Search modal
+  //Search modal and animation
   const [modal, setModal] = useState(false);
+  const [showInput, setShowInput] = useState(false);
+  const [inputVisible, setInputVisible] = useState(false);
 
   const toggleModal = () => {
     setModal((prev) => !prev);
+  };
+
+  const handleFindGamesClick = () => {
+    if (window.innerWidth <= 1024) {
+      if (showInput) {
+        // Start fade-out animation
+        setInputVisible(false);
+        setTimeout(() => {
+          setShowInput(false);
+        }, 500); // Match it with fade out duration
+      } else {
+        setShowInput(true);
+        setInputVisible(true);
+      }
+    } else {
+      toggleModal();
+    }
   };
 
   useEffect(() => {
@@ -77,8 +96,34 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li className="relative flex flex-1 items-center justify-between max-lg:flex-col max-lg:items-start max-lg:fixed max-lg:-my-48">
-                    <div onClick={toggleModal} className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]">
+                    <div
+                      onClick={handleFindGamesClick}
+                      className="font-bold text-[16px] leading-[24px] text-p4 transition-colors duration-500 cursor-pointer hover:text-yellow-300 max-lg:my-4 max-lg:text-[32px]"
+                    >
                       Find Games
+                    </div>
+                    <div className="lg:hidden">
+                      {showInput && (
+                        <div
+                          className={clsx(
+                            "transition-all",
+                            inputVisible
+                              ? "animate-fadeInDown"
+                              : "animate-fadeOutUp"
+                          )}
+                        >
+                          <div className="flex gap-5">
+                            <input
+                              type="text"
+                              placeholder="Search games..."
+                              className="w-full border p-2 rounded-md text-black outline-yellow-400 focus:outline outline-offset-4"
+                            />
+                            <button onClick="toBrowse()">
+                              <Search size={32} />
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     <CustomLink to="/Browse" text="Browse Games" />
                     <CustomLink to="/Forum" text="Forum" />
@@ -106,7 +151,7 @@ const Header = () => {
         </div>
       </header>
 
-      <Search modal={modal} toggleModal={toggleModal} />
+      <SearchModal modal={modal} toggleModal={toggleModal} />
     </>
   );
 };
