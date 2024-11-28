@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import clsx from "clsx";
 import { CircleUserRound } from "lucide-react";
-import Search from "./Search.jsx";
+import Search from "../components/Search.jsx";
 
 const Header = () => {
   //Header responsive check
