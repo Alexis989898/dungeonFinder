@@ -78,6 +78,10 @@ body,
   );
 }
 
+.custom-outline {
+  @apply focus:outline focus:outline-2 focus:outline-yellow-400 outline-offset-4;
+}
+
 /* Search and Header modal fade-in animation */
 @keyframes fadeIn {
   from {

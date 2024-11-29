@@ -3,16 +3,17 @@ import Game from "../components/Game.jsx";
 function Browser() {
   return (
     <>
-      <div className="m-32 browser-container mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4 py-8">
+      <div className="browser-container m-32 container">
         {/* Search Section */}
         <div className="search-section flex flex-col gap-4 bg-slate-900 p-6 rounded-xl shadow-lg">
           <h2 className="text-xl font-bold text-yellow-400">
-            Search for Games
+            Search
           </h2>
           <input
             type="text"
-            placeholder="Search games, genres, or keywords..."
-            className="w-full px-4 py-2 text-sm rounded-lg bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="Search sessions, systems or keywords..."
+            className="w-full px-4 py-2 text-sm rounded-lg bg-slate-800 text-white 
+            custom-outline"
           />
         </div>
 
@@ -20,14 +21,24 @@ function Browser() {
         <div className="filter-section mt-8 bg-slate-900 p-6 rounded-xl shadow-lg">
           <h2 className="text-xl font-bold text-yellow-400">Filters</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-            {/* Filter: Game Types */}
+            {/* Filter: Type */}
             <div className="filter-group">
-              <label className="text-sm font-bold text-white">Game Type</label>
-              <select className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              <label className="text-sm font-bold text-white">Type</label>
+              <select className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white custom-outline">
                 <option value="">Any</option>
-                <option value="tabletop">Tabletop RPG</option>
-                <option value="dnd">D&D</option>
-                <option value="cyberpunk">Cyberpunk</option>
+                <option value="session">Session</option>
+                <option value="system">System</option>
+              </select>
+            </div>
+
+            {/* Filter: Location */}
+            <div className="filter-group">
+              <label className="text-sm font-bold text-white">Location</label>
+              <select className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white custom-outline">
+                <option value="">Any</option>
+                <option value="10km">Within 10 km</option>
+                <option value="50km">Within 50 km</option>
+                <option value="online">Online</option>
               </select>
             </div>
 
@@ -41,27 +52,20 @@ function Browser() {
                 min="1"
                 max="20"
                 placeholder="e.g., 5"
-                className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white 
+                custom-outline"
               />
             </div>
 
-            {/* Filter: Difficulty Level */}
-            <div className="filter-group">
-              <label className="text-sm font-bold text-white">Difficulty</label>
-              <select className="w-full mt-2 px-4 py-2 text-sm rounded-lg bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                <option value="">Any</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-              </select>
-            </div>
+            
           </div>
         </div>
 
         {/* Results Section */}
-        <div className="results-section mt-8">
+        <div className="results-section my-8">
           <h2 className="text-xl font-bold text-yellow-400 mb-4">Results</h2>
-          <div className="game-results grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="game-results grid  grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-3 max-[690px]:grid-cols-2 max-sm:grid-cols-2 
+          gap-4 justify-center justify-items-center">
             {/* Example games using Game component */}
             {[
               {

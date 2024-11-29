@@ -6,15 +6,15 @@ const Hero = () => {
 
   const games = [
     { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover1.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover2.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover3.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover4.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover5.png" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover6.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover7.jpg" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover8.png" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover9.png" },
-    { name: "Cyberpunk", image: "src/assets/exampleCovers/ExampleCover10.png" },
+    { name: "Dungeons & Dragons", image: "src/assets/exampleCovers/ExampleCover2.jpg" },
+    { name: "Call of Cthulhu", image: "src/assets/exampleCovers/ExampleCover3.jpg" },
+    { name: "Vampire", image: "src/assets/exampleCovers/ExampleCover4.jpg" },
+    { name: "Pathfinder", image: "src/assets/exampleCovers/ExampleCover5.png" },
+    { name: "Star Wars", image: "src/assets/exampleCovers/ExampleCover6.jpg" },
+    { name: "Traveller", image: "src/assets/exampleCovers/ExampleCover7.jpg" },
+    { name: "Posthuman Saga", image: "src/assets/exampleCovers/ExampleCover8.png" },
+    { name: "A Bandeira do Elefante e da Arara", image: "src/assets/exampleCovers/ExampleCover9.png" },
+    { name: "Electric Bastionland", image: "src/assets/exampleCovers/ExampleCover10.png" },
   ];  
 
   return (
