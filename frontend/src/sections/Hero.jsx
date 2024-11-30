@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import GameList from "../components/GameList.jsx";
+import GameList from "../components/CardList.jsx";
 import { Crown, AlarmClockCheck } from "lucide-react";
 import mainImageTest from "../assets/mainImageTest.jpg";
 const Hero = () => {

@@ -1,8 +1,8 @@
-import Game from "./Game.jsx";
+import Card from "./SystemCard.jsx";
 import { useRef } from "react";
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
-function GameList(props) {
+function CardList(props) {
   const Icon = props.icon;
   const carouselRef = useRef(null);
 
@@ -47,7 +47,7 @@ function GameList(props) {
           className="flex gap-4 overflow-x-scroll overflow-y-visible scroll-smooth hide-scrollbar h-96 px-5 items-center"
         >
           {props.games.map((game, index) => (
-            <Game key={index} name={game.name} image={game.image} />
+            <Card key={index} name={game.name} image={game.image} />
           ))}
         </div>
 
@@ -63,4 +63,4 @@ function GameList(props) {
   );
 }
 
-export default GameList;
+export default CardList;

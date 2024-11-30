@@ -1,4 +1,5 @@
-import Game from "../components/Game.jsx";
+import Game from "../components/SystemCard.jsx";
+import Session from "../components/SessionCard.jsx";
 
 function Browser() {
   return (
@@ -6,9 +7,7 @@ function Browser() {
       <div className="browser-container m-32 container">
         {/* Search Section */}
         <div className="search-section flex flex-col gap-4 bg-slate-900 p-6 rounded-xl shadow-lg">
-          <h2 className="text-xl font-bold text-yellow-400">
-            Search
-          </h2>
+          <h2 className="text-xl font-bold text-yellow-400">Search</h2>
           <input
             type="text"
             placeholder="Search sessions, systems or keywords..."
@@ -56,17 +55,32 @@ function Browser() {
                 custom-outline"
               />
             </div>
-
-            
           </div>
         </div>
 
         {/* Results Section */}
         <div className="results-section my-8">
           <h2 className="text-xl font-bold text-yellow-400 mb-4">Results</h2>
-          <div className="game-results grid  grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-3 max-[690px]:grid-cols-2 max-sm:grid-cols-2 
-          gap-4 justify-center justify-items-center">
+          <div
+            className="game-results grid  grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-3 max-[690px]:grid-cols-2 max-sm:grid-cols-2 
+          gap-4 justify-center justify-items-center"
+          >
             {/* Example games using Game component */}
+            {[
+              {
+                name: "Cool Pedrinho session",
+                image: "src/assets/icon.jpeg",
+                players: 2,
+              },
+            ].map((session, index) => (
+              <Session
+                key={index}
+                name={session.name}
+                image={session.image}
+                players={session.players}
+              />
+            ))}
+
             {[
               {
                 name: "Cyberpunk",

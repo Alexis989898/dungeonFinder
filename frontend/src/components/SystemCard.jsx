@@ -1,6 +1,6 @@
-function Game(props) {
+function SystemCard(props) {
   return (
-    <div id="system-wrapper" className="w-52 min-w-52 hover:scale-110 hover:outline outline-yellow-300 outline-offset-4  rounded-xl transition-transform cursor-pointer">
+    <div /*onClick={browseSystem}*/ id="system-wrapper" className="w-52 min-w-52 hover:scale-110 hover:outline outline-yellow-300 outline-offset-4  rounded-xl transition-transform cursor-pointer">
       <div id="system-img" className="w-full bg">
         <img
           className="w-full object-fill rounded-t-xl h-64"
@@ -16,4 +16,4 @@ function Game(props) {
   );
 }
 
-export default Game;
+export default SystemCard;
