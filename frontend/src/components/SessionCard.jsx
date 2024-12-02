@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 function SessionCard(props) {
   let navigate = useNavigate();
   function goToSession() {
-    let path = "/SystemCard.jsx";
+    let path = "/Session";
     navigate(path);
   }
 

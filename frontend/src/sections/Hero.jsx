@@ -22,7 +22,7 @@ const Hero = () => {
       <Element name="hero">
         <div className="hero-container mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4">
           <div className="rpg-cover-wrapper w-full h-[1000px]">
-            <div className="radial-gradient-cover nested"></div>
+            <div className="radial-gradient-cover nested z-10"></div>
             <img
               className="rpg-cover-img nested w-full block object-bottom"
               src={mainImageTest}

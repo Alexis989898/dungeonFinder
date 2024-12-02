@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App.jsx";
 import Browse from "./Browse.jsx";
 import Forum from "./Forum.jsx";
+import Session from "./Session.jsx";
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/Browse" element={<Browse />} />
         <Route path="/Forum" element={<Forum />} />
+        <Route path="/Session" element={<Session />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

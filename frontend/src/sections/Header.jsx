@@ -4,6 +4,7 @@ import { NavLink } from "react-router";
 import clsx from "clsx";
 import { CircleUserRound, Search } from "lucide-react";
 import SearchModal from "../components/SearchModal.jsx";
+import ProfileModal from "../components/ProfileModal.jsx";
 
 const Header = () => {
   //Header responsive check
@@ -14,10 +15,16 @@ const Header = () => {
   const [modal, setModal] = useState(false);
   const [showInput, setShowInput] = useState(false);
   const [inputVisible, setInputVisible] = useState(false);
+  //Profile modal
+  const [pModal, setPModal] = useState(false);
 
   const toggleModal = () => {
     setModal((prev) => !prev);
   };
+
+  const togglePModal = () => {
+    setPModal((prev) => !prev);
+  }
 
   const handleFindGamesClick = () => {
     if (window.innerWidth <= 1024) {
@@ -34,6 +41,10 @@ const Header = () => {
     } else {
       toggleModal();
     }
+  };
+
+  const handleProfileClick = () => {
+    togglePModal();
   };
 
   useEffect(() => {
@@ -89,7 +100,7 @@ const Header = () => {
                       to="/"
                       offset={-100}
                       className={clsx(
-                        "max-lg:hidden transition-transform duration-500 cursor-pointer"
+                        "max-lg:hidden transition-transform duration-500 cursor-pointer hvr-grow"
                       )}
                     >
                       <img src={icon} width={155} height={55} alt="logo" />
@@ -102,7 +113,7 @@ const Header = () => {
                     >
                       Find Games
                     </div>
-                    <div className="lg:hidden">
+                    <div className="search-mobile lg:hidden">
                       {showInput && (
                         <div
                           className={clsx(
@@ -128,8 +139,8 @@ const Header = () => {
                     <CustomLink to="/Browse" text="Browse Games" />
                     <CustomLink to="/Forum" text="Forum" />
 
-                    <CircleUserRound
-                      className="text-yellow-400 cursor-pointer max-lg:hidden"
+                    <CircleUserRound onClick={togglePModal}
+                      className="text-yellow-400 cursor-pointer max-lg:hidden hvr-grow"
                       size={40}
                     ></CircleUserRound>
                   </li>
@@ -152,6 +163,7 @@ const Header = () => {
       </header>
 
       <SearchModal modal={modal} toggleModal={toggleModal} />
+      <ProfileModal modal={pModal} togglePModal={togglePModal} />
     </>
   );
 };

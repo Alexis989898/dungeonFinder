@@ -24,6 +24,10 @@ body,
   @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
 }
 
+.player-name {
+  @apply bg-slate-800 p-2 rounded-xl my-2;
+}
+
 .rpg-cover-wrapper {
   margin-top: -250px;
   position: relative;
@@ -46,7 +50,16 @@ body,
     rgba(9, 11, 22, 0.5) 10%,
     rgba(9, 11, 22, 1) 65%
   );
-  z-index: 1;
+}
+
+.vertical-gradient {
+  background: rgb(9, 11, 22);
+  background: linear-gradient(
+    0deg,
+    rgba(9, 11, 22, 1) 10%,
+    rgba(9, 11, 22, 0) 50%,
+    rgba(9, 11, 22, 1) 90%
+  );
 }
 
 .nested {
@@ -76,6 +89,23 @@ body,
     rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+/* grow hover effect */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .custom-outline {
