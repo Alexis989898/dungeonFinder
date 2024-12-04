@@ -13,3 +13,23 @@
 - [TailwindCSS](https://tailwindcss.com/)
 
 ---
+## How to open the frontend ⚛️
+#### Clone the repo
+```bash
+git clone https://github.com/Alexis989898/dungeonFinder.git
+```
+
+#### Go to the frontend folder
+```bash
+cd ./dungeonFinder/frontend
+```
+
+#### Install packages
+```bash
+npm install
+```
+
+#### To run the local server:
+```bash
+npm run dev
+```
