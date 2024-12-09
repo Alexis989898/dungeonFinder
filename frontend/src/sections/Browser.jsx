@@ -68,7 +68,7 @@ function Browser() {
             {/* Example games using Game component */}
             {[
               {
-                name: "Cool Pedrinho session",
+                name: "Example session",
                 image: "src/assets/icon.jpeg",
                 players: 2,
               },

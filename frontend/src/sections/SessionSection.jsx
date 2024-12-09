@@ -3,23 +3,24 @@ function SessionSection() {
     <>
       <div
         className="session-wrapper container my-32 pb-12  
-      grid gap-10 grid-cols-[2fr_1fr] grid-rows-[3fr_2fr]"
+      grid gap-10 grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1"
       >
-        <div className="session-name-div flex justify-between h-96 overflow-hidden pl-16">
-          <div className="session-name self-center pt-5 min-w-96">
+        <div className="session-name self-center justify-self-center flex flex-col max-md:flex-row justify-around items-center h-full w-96">
+          <div>
             <div className="text-xl font-bold text-yellow-400">Session: </div>
-            <div className="text-xl font-bold">Coolest Session Ever</div>
+            <div className="text-xl font-bold">Example Session</div>
           </div>
-          <div className="session-img relative max-w-[400px]">
-            <img
-              className="h-full rounded-xl"
-              src="src/assets/exampleCovers/ExampleCover5.png"
-              alt="example"
-            />
-          </div>
+          <button className="bg-blue-700 rounded-xl p-2 w-32 hover:outline outline-blue-700 outline-offset-4 transform transition-all">Ask to Join</button>
+        </div>
+        <div className="session-img relative max-w-[400px]">
+          <img
+            className="min-w-64 rounded-xl"
+            src="src/assets/exampleCovers/ExampleCover5.png"
+            alt="example"
+          />
         </div>
 
-        <div className="session-participants bg-slate-900 rounded-xl p-4">
+        <div className="session-participants bg-slate-900 rounded-xl p-4 min-w-32 flex flex-col justify-around">
           <div className="text-xl font-bold text-yellow-400">Players</div>
           <div className="h-80 overflow-y-auto">
             <div className="player-name">Player 1</div>
@@ -31,9 +32,8 @@ function SessionSection() {
             <div className="player-name">Player 7</div>
             <div className="player-name">Player 8</div>
           </div>
-
         </div>
-        <div className="session-details bg-slate-900 rounded-xl col-span-2 p-4">
+        <div className="session-details bg-slate-900 rounded-xl col-span-2 max-lg:col-span-1 p-4">
           <div className="text-xl font-bold text-yellow-400">
             Session details
           </div>
